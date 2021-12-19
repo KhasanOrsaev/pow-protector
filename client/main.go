@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"net"
 	"os"
+	"strings"
 
 	"github.com/bwesterb/go-pow"
 )
@@ -35,7 +36,7 @@ func main() {
 			break
 		}
 
-		switch command[:len(command)-2] {
+		switch strings.Trim(command, "\n") {
 		case "get", "exit":
 		default:
 			fmt.Println("Unknown command. Try 'get' or 'exit'")
